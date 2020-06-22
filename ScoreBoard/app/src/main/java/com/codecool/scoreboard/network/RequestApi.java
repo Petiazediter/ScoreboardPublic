@@ -1,5 +1,7 @@
 package com.codecool.scoreboard.network;
 
+import com.codecool.scoreboard.model.SportEvent;
+
 import io.reactivex.Flowable;
 import retrofit2.http.GET;
 import retrofit2.http.Path;
@@ -13,6 +15,7 @@ public interface RequestApi {
 
     // team details by ID: https://www.thesportsdb.com/api/v1/json/1/lookupteam.php?id=133604
     // league details by ID: https://www.thesportsdb.com/api/v1/json/1/lookupleague.php?id=4346
+    // event details by ID: https://www.thesportsdb.com/api/v1/json/1/lookupevent.php?id=441613
 
     /*
     Next 5 Events by Team Id
@@ -31,11 +34,11 @@ public interface RequestApi {
 
     // get last 15 events by League ID
     @GET("eventspastleague.php?id={id}")
-    Flowable<Event> getLast15Evens(@Path("id") int leagueId);
+    Flowable<SportEvent> getLast15Evens(@Path("id") int leagueId);
 
     // get next 15 events by league ID
     @GET("eventsnextleague.php?id={id}")
-    Flowable<Event> getNext15Events(@Path("id") int leagueId);
+    Flowable<SportEvent> getNext15Events(@Path("id") int leagueId);
 
 
 }
