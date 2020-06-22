@@ -7,6 +7,7 @@ import androidx.viewpager.widget.PagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
 import android.os.Bundle;
+import android.widget.Toolbar;
 
 import com.codecool.scoreboard.fragments.Fragment1;
 import com.codecool.scoreboard.fragments.Fragment2;
@@ -19,23 +20,25 @@ import butterknife.ButterKnife;
 
 public class MainActivity extends AppCompatActivity {
 
-    @BindView(R.id.main_view_pager)
+    /*@BindView(R.id.main_view_pager)
     ViewPager viewPager;
     PagerAdapter pagerAdapter;
-
+*/
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        ButterKnife.bind(this);
+      //  ButterKnife.bind(this);
 
-        List<Fragment> fragmentList = new ArrayList<>();
-        fragmentList.add(new Fragment1());
-        fragmentList.add(new Fragment2());
+       // List<Fragment> fragmentList = new ArrayList<>();
+      //  fragmentList.add(new Fragment1());
+     //   fragmentList.add(new Fragment2());
 
-        pagerAdapter = new SlideAdapter(getSupportFragmentManager(), FragmentStatePagerAdapter.BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT, fragmentList);
-        viewPager.setAdapter(pagerAdapter);
+        //pagerAdapter = new SlideAdapter(getSupportFragmentManager(), FragmentStatePagerAdapter.BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT, fragmentList);
+      //  viewPager.setAdapter(pagerAdapter);
+
+        getSupportActionBar().hide();
     }
 
 

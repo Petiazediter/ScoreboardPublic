@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">Score Board</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="page_1_header">Realtime datas about your favourite cricket team!</string>
+    <string name="next">Next</string>
+    <string name="finish">I got it!</string>
+    <string name="page_2_header">Access to upcoming events,and check the missed ones in one application.</string>
 </resources>
