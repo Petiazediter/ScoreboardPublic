@@ -35,7 +35,7 @@ public interface RequestApi {
 
     // get next 15 events by league ID
     @GET("eventsnextleague.php?id={id}")
-    Flowable<Event> getNext15Events(@Patch("id") int leagueId);
+    Flowable<Event> getNext15Events(@Path("id") int leagueId);
 
 
 }
