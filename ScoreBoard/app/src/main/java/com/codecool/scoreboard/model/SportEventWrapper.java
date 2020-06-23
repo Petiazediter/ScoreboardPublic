@@ -9,7 +9,7 @@ public class SportEventWrapper {
     @SerializedName("events")
     private List<SportEvent> events;
 
-    public List<SportEvent> getEvents() {
+    public List<SportEvent> getEventList() {
         return events;
     }
 }
