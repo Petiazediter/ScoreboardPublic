@@ -71,7 +71,7 @@ public class SportNextEventsPresenter<V extends SportEventsContract> {
                             int idHomeTeam = sportEventList.get(i).getIdHomeTeam();
                             int idAwayTeam = sportEventList.get(i).getIdAwayTeam();
 
-                            nextEventsActivity.lastSportEvents
+                            nextEventsActivity.nextSportsEvents
                                     .add(new SportEvent(id, description,date,homeTeam,awayTeam,
                                             idHomeTeam,idAwayTeam));
                         }
@@ -85,7 +85,7 @@ public class SportNextEventsPresenter<V extends SportEventsContract> {
 
                     @Override
                     public void onComplete() {
-                        view.dataSuccessfullyLoaded(nextEventsActivity.lastSportEvents);
+                        view.dataSuccessfullyLoaded(nextEventsActivity.nextSportsEvents);
 
                     }
                 });

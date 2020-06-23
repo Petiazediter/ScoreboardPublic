@@ -7,7 +7,6 @@ import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -31,12 +30,12 @@ public class NextEventsActivity extends Fragment implements SportEventsContract 
     SportNextEventsPresenter presenter;
     SportEventAdapter adapter;
 
-    List<SportEvent> lastSportEvents = new ArrayList<>();
+    List<SportEvent> nextSportsEvents = new ArrayList<>();
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.activity_last_events,container,false);
+        View view = inflater.inflate(R.layout.activity_next_events,container,false);
         ButterKnife.bind(this,view);
 
         presenter = new SportNextEventsPresenter(requireActivity());
@@ -51,7 +50,7 @@ public class NextEventsActivity extends Fragment implements SportEventsContract 
     }
 
     private void setAdapter() {
-        adapter = new SportEventAdapter(requireContext(), lastSportEvents);
+        adapter = new SportEventAdapter(requireContext(), nextSportsEvents);
         sportEventsView.setLayoutManager(new LinearLayoutManager(requireContext()));
         sportEventsView.setAdapter(adapter);
     }
