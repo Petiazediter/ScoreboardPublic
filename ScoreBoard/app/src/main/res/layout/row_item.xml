@@ -4,27 +4,36 @@
     android:id="@+id/datarow"
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_margin="20dp"
-    android:background="@color/colorPrimary">
+    android:layout_margin="@dimen/margin_mini"
+    android:background="@color/colorAccent"
+    >
 
     <TextView
-        android:padding="10dp"
-        android:id="@+id/description"
+        android:id="@+id/homeTeam"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         android:layout_width="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_height="wrap_content"
-        android:hint="@string/description"
+        android:hint="@string/hometeam"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:gravity="center"/>
+
+    <TextView
+        android:id="@+id/awayTeam"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/homeTeam"
+        android:layout_width="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/hometeam"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:gravity="center"/>
 
     <TextView
         android:id="@+id/date"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        android:padding="10dp"
         android:layout_width="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/description"
+        app:layout_constraintTop_toBottomOf="@id/awayTeam"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_height="wrap_content"

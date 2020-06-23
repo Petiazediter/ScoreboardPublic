@@ -40,13 +40,8 @@ public class NextEventsActivity extends Fragment implements SportEventsContract 
 
         presenter = new SportNextEventsPresenter(requireActivity());
         presenter.onAttach(this);
-        return view;
-    }
-
-    @Override
-    public void onResume() {
-        super.onResume();
         presenter.requestNextEvents(this);
+        return view;
     }
 
     private void setAdapter() {

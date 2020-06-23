@@ -7,7 +7,6 @@ import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -41,14 +40,11 @@ public class LastEventsActivity extends Fragment implements SportEventsContract 
 
         presenter = new SportLastEventsPresenter(requireActivity());
         presenter.onAttach(this);
+        presenter.requestLastEvents(this);
         return view;
     }
 
-    @Override
-    public void onResume() {
-        super.onResume();
-        presenter.requestLastEvents(this);
-    }
+
 
     private void setAdapter() {
         adapter = new SportEventAdapter(requireActivity(), lastSportEvents);

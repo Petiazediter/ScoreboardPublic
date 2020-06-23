@@ -21,8 +21,10 @@ public class SportEventAdapter extends RecyclerView.Adapter<SportEventAdapter.Vi
 
     public class ViewHolder extends RecyclerView.ViewHolder {
 
-        @BindView(R.id.description)
-        TextView description;
+        @BindView(R.id.homeTeam)
+        TextView home;
+        @BindView(R.id.awayTeam)
+        TextView away;
         @BindView(R.id.date)
         TextView date;
 
@@ -32,7 +34,8 @@ public class SportEventAdapter extends RecyclerView.Adapter<SportEventAdapter.Vi
         }
 
         public void bind(SportEvent sportEvent) {
-            description.setText(sportEvent.getHomeTeam());
+            home.setText(sportEvent.getHomeTeam() + " VS");
+            away.setText(sportEvent.getAwayTeam());
             date.setText(sportEvent.getDate());
         }
     }
