@@ -7,4 +7,18 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="FragmentHeader">
+        <item name="android:textSize">25dp</item>
+        <item name="textAllCaps">true</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">#ffffff</item>
+    </style>
+
+    <style name="FragmentButton">
+        <item name="android:textColor">@color/buttonBlue</item>
+        <item name="textAllCaps">true</item>
+        <item name="android:background">@android:color/transparent</item>
+        <item name="android:textSize">20dp</item>
+    </style>
+
 </resources>
