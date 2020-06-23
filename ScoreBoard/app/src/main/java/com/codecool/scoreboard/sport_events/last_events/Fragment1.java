@@ -7,36 +7,37 @@ import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
-import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.codecool.scoreboard.R;
 import com.codecool.scoreboard.model.SportEvent;
 import com.codecool.scoreboard.sport_events.SportEventAdapter;
 import com.codecool.scoreboard.sport_events.SportEventsContract;
+import com.codecool.scoreboard.sport_events.last_events.SportLastEventsPresenter;
 
 import java.util.ArrayList;
 import java.util.List;
 
+import butterknife.BindDimen;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class LastEventsActivity extends Fragment implements SportEventsContract {
+public class Fragment1 extends Fragment implements SportEventsContract {
 
     @BindView(R.id.recyclerView)
-    RecyclerView sportEventsView;
+    RecyclerView recyclerView;
 
     SportLastEventsPresenter presenter;
     SportEventAdapter adapter;
 
-    List<SportEvent> lastSportEvents = new ArrayList<>();
+    List<SportEvent> lastSportEvents;
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.activity_last_events, container,false);
+        View view = inflater.inflate(R.layout.activity_last_events, container, false);
+
         ButterKnife.bind(this,view);
 
         presenter = new SportLastEventsPresenter(requireActivity());
@@ -47,18 +48,11 @@ public class LastEventsActivity extends Fragment implements SportEventsContract 
     @Override
     public void onResume() {
         super.onResume();
-        presenter.requestLastEvents(this);
-    }
-
-    private void setAdapter() {
-        adapter = new SportEventAdapter(requireActivity(), lastSportEvents);
-        sportEventsView.setLayoutManager(new LinearLayoutManager(requireActivity()));
-        sportEventsView.setAdapter(adapter);
+     //   presenter.requestLastEvents(this);
     }
 
     @Override
     public void dataSuccessfullyLoaded(List<SportEvent> sportEvents) {
-        setAdapter();
-    }
 
+    }
 }

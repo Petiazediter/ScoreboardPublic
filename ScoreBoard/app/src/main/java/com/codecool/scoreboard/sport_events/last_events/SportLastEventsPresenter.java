@@ -88,7 +88,7 @@ public class SportLastEventsPresenter<V extends SportEventsContract> {
 
                     @Override
                     public void onError(Throwable e) {
-                        Toast.makeText(lastEventsActivity,e.getMessage(), Toast.LENGTH_LONG).show();
+                        Toast.makeText(lastEventsActivity.requireActivity(),e.getMessage(), Toast.LENGTH_LONG).show();
                     }
 
                     @Override

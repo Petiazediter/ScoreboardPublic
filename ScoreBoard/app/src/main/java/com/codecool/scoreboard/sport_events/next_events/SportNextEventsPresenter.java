@@ -80,7 +80,7 @@ public class SportNextEventsPresenter<V extends SportEventsContract> {
 
                     @Override
                     public void onError(Throwable e) {
-                        Toast.makeText(nextEventsActivity,e.getMessage(), Toast.LENGTH_LONG).show();
+                        Toast.makeText(nextEventsActivity.getContext(),e.getMessage(), Toast.LENGTH_LONG).show();
                     }
 
                     @Override

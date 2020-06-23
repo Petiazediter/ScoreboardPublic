@@ -1,8 +1,14 @@
 package com.codecool.scoreboard.sport_events.next_events;
 
 import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -17,7 +23,7 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class NextEventsActivity extends AppCompatActivity implements SportEventsContract {
+public class NextEventsActivity extends Fragment implements SportEventsContract {
 
     @BindView(R.id.recyclerView)
     RecyclerView sportEventsView;
@@ -27,25 +33,26 @@ public class NextEventsActivity extends AppCompatActivity implements SportEvents
 
     List<SportEvent> lastSportEvents = new ArrayList<>();
 
+    @Nullable
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_last_events);
-        ButterKnife.bind(this);
+    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        View view = inflater.inflate(R.layout.activity_last_events,container,false);
+        ButterKnife.bind(this,view);
 
-        presenter = new SportNextEventsPresenter(this);
+        presenter = new SportNextEventsPresenter(requireActivity());
         presenter.onAttach(this);
+        return view;
     }
 
     @Override
-    protected void onResume() {
+    public void onResume() {
         super.onResume();
         presenter.requestNextEvents(this);
     }
 
     private void setAdapter() {
-        adapter = new SportEventAdapter(this, lastSportEvents);
-        sportEventsView.setLayoutManager(new LinearLayoutManager(this));
+        adapter = new SportEventAdapter(requireContext(), lastSportEvents);
+        sportEventsView.setLayoutManager(new LinearLayoutManager(requireContext()));
         sportEventsView.setAdapter(adapter);
     }
 
