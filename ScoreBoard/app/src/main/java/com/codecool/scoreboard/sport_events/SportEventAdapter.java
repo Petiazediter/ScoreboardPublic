@@ -22,7 +22,9 @@ public class SportEventAdapter extends RecyclerView.Adapter<SportEventAdapter.Vi
     public class ViewHolder extends RecyclerView.ViewHolder {
 
         @BindView(R.id.description)
-        TextView tempData;
+        TextView description;
+        @BindView(R.id.date)
+        TextView date;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -30,7 +32,8 @@ public class SportEventAdapter extends RecyclerView.Adapter<SportEventAdapter.Vi
         }
 
         public void bind(SportEvent sportEvent) {
-            tempData.setText(sportEvent.getHomeTeam());
+            description.setText(sportEvent.getHomeTeam());
+            date.setText(sportEvent.getDate());
         }
     }
 

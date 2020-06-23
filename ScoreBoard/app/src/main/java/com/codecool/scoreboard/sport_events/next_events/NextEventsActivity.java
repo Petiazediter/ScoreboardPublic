@@ -24,7 +24,7 @@ import butterknife.ButterKnife;
 
 public class NextEventsActivity extends Fragment implements SportEventsContract {
 
-    @BindView(R.id.recyclerView)
+    @BindView(R.id.recyclerView2)
     RecyclerView sportEventsView;
 
     SportNextEventsPresenter presenter;
