@@ -42,13 +42,6 @@ public class SportLastEventsPresenter<V extends SportEventsContract> {
                 .observeOn(AndroidSchedulers.mainThread());
     }
 
-    private Observable<SportEventWrapper> getSportNextEventWrapperObservable() {
-        return requestApi.getNext15EventsWrapper()
-                .toObservable()
-                .subscribeOn(Schedulers.io())
-                .observeOn(AndroidSchedulers.mainThread());
-    }
-
     void requestLastEvents(LastEventsActivity lastEventsActivity) {
         // getting observable
         subscribe(lastEventsActivity);
