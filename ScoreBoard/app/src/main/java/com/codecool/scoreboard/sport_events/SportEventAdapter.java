@@ -37,6 +37,8 @@ public class SportEventAdapter extends RecyclerView.Adapter<SportEventAdapter.Vi
             home.setText(sportEvent.getHomeTeam() + " VS");
             away.setText(sportEvent.getAwayTeam());
             date.setText(sportEvent.getDate());
+
+
         }
     }
 
@@ -68,7 +70,4 @@ public class SportEventAdapter extends RecyclerView.Adapter<SportEventAdapter.Vi
     public int getItemCount() {
         return sportEventList.size();
     }
-
-
-
 }

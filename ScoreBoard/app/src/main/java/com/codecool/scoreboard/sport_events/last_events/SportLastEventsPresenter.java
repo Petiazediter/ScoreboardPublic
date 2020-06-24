@@ -42,12 +42,12 @@ public class SportLastEventsPresenter<V extends SportEventsContract> {
                 .observeOn(AndroidSchedulers.mainThread());
     }
 
-    void requestLastEvents(LastEventsActivity lastEventsActivity) {
+    void requestLastEvents(LastEventsFragment lastEventsFragment) {
         // getting observable
-        subscribe(lastEventsActivity);
+        subscribe(lastEventsFragment);
     }
 
-    private void subscribe(LastEventsActivity lastEventsActivity) {
+    private void subscribe(LastEventsFragment lastEventsFragment) {
         getSportLastEventWrapperObservable()
 
                 // subscribe to that observable
@@ -72,7 +72,7 @@ public class SportLastEventsPresenter<V extends SportEventsContract> {
                             int idHomeTeam = sportEventList.get(i).getIdHomeTeam();
                             int idAwayTeam = sportEventList.get(i).getIdAwayTeam();
 
-                            lastEventsActivity.lastSportEvents
+                            lastEventsFragment.lastSportEvents
                                     .add(new SportEvent(id, description,date,homeTeam,awayTeam,
                                             idHomeTeam,idAwayTeam));
                         }
@@ -81,12 +81,12 @@ public class SportLastEventsPresenter<V extends SportEventsContract> {
 
                     @Override
                     public void onError(Throwable e) {
-                        Toast.makeText(lastEventsActivity.requireActivity(),e.getMessage(), Toast.LENGTH_LONG).show();
+                        Toast.makeText(lastEventsFragment.requireActivity(),e.getMessage(), Toast.LENGTH_LONG).show();
                     }
 
                     @Override
                     public void onComplete() {
-                        view.dataSuccessfullyLoaded(lastEventsActivity.lastSportEvents);
+                        view.dataSuccessfullyLoaded(lastEventsFragment.lastSportEvents);
 
                     }
                 });

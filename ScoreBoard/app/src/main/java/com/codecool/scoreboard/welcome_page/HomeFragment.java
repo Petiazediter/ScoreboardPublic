@@ -13,10 +13,8 @@ import android.view.ViewGroup;
 
 import com.codecool.scoreboard.R;
 import com.codecool.scoreboard.SlideAdapter;
-import com.codecool.scoreboard.sport_events.last_events.Fragment1;
-import com.codecool.scoreboard.fragments.Fragment2;
-import com.codecool.scoreboard.sport_events.last_events.LastEventsActivity;
-import com.codecool.scoreboard.sport_events.next_events.NextEventsActivity;
+import com.codecool.scoreboard.sport_events.last_events.LastEventsFragment;
+import com.codecool.scoreboard.sport_events.next_events.NextEventsFragment;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -39,8 +37,8 @@ public class HomeFragment extends Fragment {
         ButterKnife.bind(this,view);
 
          List<Fragment> fragmentList = new ArrayList<>();
-         fragmentList.add(new LastEventsActivity());
-         fragmentList.add(new NextEventsActivity());
+         fragmentList.add(new LastEventsFragment());
+         fragmentList.add(new NextEventsFragment());
 
         pagerAdapter = new SlideAdapter(requireActivity().getSupportFragmentManager(), FragmentStatePagerAdapter.BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT, fragmentList);
         viewPager.setAdapter(pagerAdapter);

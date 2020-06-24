@@ -22,7 +22,7 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class NextEventsActivity extends Fragment implements SportEventsContract {
+public class NextEventsFragment extends Fragment implements SportEventsContract {
 
     @BindView(R.id.recyclerView2)
     RecyclerView sportEventsView;
