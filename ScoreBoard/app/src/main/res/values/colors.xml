@@ -5,4 +5,6 @@
     <color name="colorAccent">#03DAC5</color>
     <color name="buttonBlue">#ffffff</color>
     <color name="fragmentBG">#ff8c7d</color>
+    <color name="dark_br">#7c98ad</color>
+    <color name="light_br">#d8f0fe</color>
 </resources>
