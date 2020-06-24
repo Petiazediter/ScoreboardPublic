@@ -1,9 +1,11 @@
 package com.codecool.scoreboard.network;
 
 import com.codecool.scoreboard.model.SportEventWrapper;
+import com.codecool.scoreboard.model.TeamWrapper;
 
 import io.reactivex.Flowable;
 import retrofit2.http.GET;
+import retrofit2.http.Query;
 
 public interface RequestApi {
 
@@ -39,5 +41,7 @@ public interface RequestApi {
     @GET("eventsnextleague.php?id=4801")
     Flowable<SportEventWrapper> getNext15EventsWrapper();
 
+    @GET("lookupteam.php?")
+    Flowable<TeamWrapper> getTeamById(@Query("id") int id);
 
 }

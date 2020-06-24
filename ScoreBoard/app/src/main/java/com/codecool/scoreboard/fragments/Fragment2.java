@@ -12,7 +12,6 @@ import androidx.fragment.app.Fragment;
 import com.codecool.scoreboard.R;
 
 public class Fragment2 extends Fragment {
-
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
