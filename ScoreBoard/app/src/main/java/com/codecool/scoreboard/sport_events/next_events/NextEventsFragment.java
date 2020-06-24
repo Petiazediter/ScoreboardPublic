@@ -13,7 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.codecool.scoreboard.R;
 import com.codecool.scoreboard.model.SportEvent;
-import com.codecool.scoreboard.sport_events.SportEventAdapter;
+import com.codecool.scoreboard.sport_events.SportEventsAdapter;
 import com.codecool.scoreboard.sport_events.SportEventsContract;
 
 import java.util.ArrayList;
@@ -28,7 +28,7 @@ public class NextEventsFragment extends Fragment implements SportEventsContract 
     RecyclerView sportEventsView;
 
     SportNextEventsPresenter presenter;
-    SportEventAdapter adapter;
+    SportEventsAdapter adapter;
 
     List<SportEvent> nextSportsEvents = new ArrayList<>();
 
@@ -45,7 +45,7 @@ public class NextEventsFragment extends Fragment implements SportEventsContract 
     }
 
     private void setAdapter() {
-        adapter = new SportEventAdapter(requireContext(), nextSportsEvents);
+        adapter = new SportEventsAdapter(requireContext(), nextSportsEvents);
         sportEventsView.setLayoutManager(new LinearLayoutManager(requireContext()));
         sportEventsView.setAdapter(adapter);
     }

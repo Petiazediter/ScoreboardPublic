@@ -12,14 +12,11 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.codecool.scoreboard.R;
 import com.codecool.scoreboard.model.SportEvent;
-import com.codecool.scoreboard.sport_events.SportEventAdapter;
+import com.codecool.scoreboard.sport_events.SportEventsAdapter;
 import com.codecool.scoreboard.sport_events.SportEventsContract;
-import com.codecool.scoreboard.sport_events.last_events.SportLastEventsPresenter;
 
-import java.util.ArrayList;
 import java.util.List;
 
-import butterknife.BindDimen;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
@@ -29,7 +26,7 @@ public class Fragment1 extends Fragment implements SportEventsContract {
     RecyclerView recyclerView;
 
     SportLastEventsPresenter presenter;
-    SportEventAdapter adapter;
+    SportEventsAdapter adapter;
 
     List<SportEvent> lastSportEvents;
 
