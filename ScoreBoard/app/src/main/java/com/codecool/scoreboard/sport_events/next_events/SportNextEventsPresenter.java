@@ -49,7 +49,6 @@ public class SportNextEventsPresenter<V extends SportEventsContract> {
     private void subscribe(NextEventsFragment nextEventsFragment) {
         getSportNextEventWrapperObservable()
 
-                // subscribe to that observable
                 .subscribe(new Observer<SportEventWrapper>() {
                     @Override
                     public void onSubscribe(Disposable d) {
@@ -75,7 +74,6 @@ public class SportNextEventsPresenter<V extends SportEventsContract> {
                                     .add(new SportEvent(id, description,date,homeTeam,awayTeam,
                                             idHomeTeam,idAwayTeam));
                         }
-
                     }
 
                     @Override
@@ -90,7 +88,6 @@ public class SportNextEventsPresenter<V extends SportEventsContract> {
                     }
                 });
     }
-
 
 
 }
