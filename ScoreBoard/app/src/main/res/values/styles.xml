@@ -27,7 +27,33 @@
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_marginHorizontal">@dimen/margin_mini</item>
         <item name="android:padding">@dimen/margin_mini</item>
+    </style>
 
+    <style name="DetailsPage">
+        <item name="android:textColor">#ffffff</item>
+        <item name="android:layout_margin">10dp</item>
+        <item name="android:shadowColor">#000000</item>
+        <item name="android:shadowDx">0</item>
+        <item name="android:shadowDy">0</item>
+
+    </style>
+
+    <style name="DetailsPage.Header">
+        <item name="android:shadowRadius">10</item>
+        <item name="android:textSize">30sp</item>
+        <item name="fontFamily">sans-serif-condensed-medium</item>
+    </style>
+
+    <style name="DetailsPage.SubHeader">
+        <item name="android:shadowRadius">5</item>
+        <item name="android:textSize">25sp</item>
+        <item name="fontFamily">sans-serif-condensed</item>
+    </style>
+
+    <style name="DetailsPage.Context">
+        <item name="android:shadowRadius">2</item>
+        <item name="android:textSize">20sp</item>
+        <item name="fontFamily">sans-serif-condensed-light</item>
     </style>
 
 </resources>
