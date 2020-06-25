@@ -32,6 +32,7 @@
 
             <TextView
                 style="@style/DetailsPage.Context"
+                android:padding="@dimen/margin_small"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 app:layout_constraintLeft_toLeftOf="parent"
