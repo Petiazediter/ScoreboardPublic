@@ -86,7 +86,11 @@ public class SportLastEventsPresenter<V extends SportEventsContract> {
 
                     @Override
                     public void onComplete() {
-                        view.dataSuccessfullyLoaded(lastEventsFragment.lastSportEvents);
+                        try {
+                            view.dataSuccessfullyLoaded(lastEventsFragment.lastSportEvents);
+                        } catch (InterruptedException e) {
+                            e.printStackTrace();
+                        }
 
                     }
                 });

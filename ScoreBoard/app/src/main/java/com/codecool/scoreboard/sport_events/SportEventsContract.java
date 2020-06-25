@@ -6,5 +6,5 @@ import java.util.List;
 
 public interface SportEventsContract {
 
-    void dataSuccessfullyLoaded(List<SportEvent> sportEvents);
+    void dataSuccessfullyLoaded(List<SportEvent> sportEvents) throws InterruptedException;
 }
