@@ -1,5 +1,6 @@
 package com.codecool.scoreboard.sport_events.last_events;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,7 +14,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.codecool.scoreboard.R;
 import com.codecool.scoreboard.model.SportEvent;
-import com.codecool.scoreboard.sport_events.SportEventAdapter;
+import com.codecool.scoreboard.sport_events.SportEventsAdapter;
 import com.codecool.scoreboard.sport_events.SportEventsContract;
 
 import java.util.ArrayList;
@@ -24,11 +25,13 @@ import butterknife.ButterKnife;
 
 public class LastEventsFragment extends Fragment implements SportEventsContract {
 
+    Context context;
+
     @BindView(R.id.recyclerView)
     RecyclerView sportEventsView;
 
     SportLastEventsPresenter presenter;
-    SportEventAdapter adapter;
+    SportEventsAdapter adapter;
 
     List<SportEvent> lastSportEvents = new ArrayList<>();
 
@@ -44,10 +47,8 @@ public class LastEventsFragment extends Fragment implements SportEventsContract 
         return view;
     }
 
-
-
     private void setAdapter() {
-        adapter = new SportEventAdapter(requireActivity(), lastSportEvents);
+        adapter = new SportEventsAdapter(requireActivity(), lastSportEvents);
         sportEventsView.setLayoutManager(new LinearLayoutManager(requireActivity()));
         sportEventsView.setAdapter(adapter);
     }

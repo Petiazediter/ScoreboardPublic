@@ -21,4 +21,13 @@
         <item name="android:textSize">20dp</item>
     </style>
 
+    <style name="details">
+        <item name="android:textAppearance">@style/TextAppearance.AppCompat.Large</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginHorizontal">@dimen/margin_mini</item>
+        <item name="android:padding">@dimen/margin_mini</item>
+
+    </style>
+
 </resources>

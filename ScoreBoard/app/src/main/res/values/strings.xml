@@ -8,5 +8,7 @@
     <string name="page_2_header">Access to upcoming events,and check the missed ones in one application.</string>
     <string name="description">HomeTeam vs AwayTeam</string>
     <string name="date">2020-01-01</string>
-    <string name="hometeam">homeTeam</string>
+    <string name="hometeam">HomeTeam</string>
+    <string name="id">ID</string>
+    <string name="awayteam">AwayTeam</string>
 </resources>

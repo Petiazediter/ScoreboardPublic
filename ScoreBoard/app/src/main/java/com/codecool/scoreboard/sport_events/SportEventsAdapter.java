@@ -2,6 +2,7 @@ package com.codecool.scoreboard.sport_events;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.Intent;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,27 +10,32 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.codecool.scoreboard.R;
 import com.codecool.scoreboard.model.SportEvent;
 import com.codecool.scoreboard.team_details.TeamDetailsActivity;
+import com.codecool.scoreboard.sport_events.details.SportEventDetailsActivity;
 
 import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class SportEventAdapter extends RecyclerView.Adapter<SportEventAdapter.ViewHolder> {
+public class SportEventsAdapter extends RecyclerView.Adapter<SportEventsAdapter.ViewHolder> {
 
     public class ViewHolder extends RecyclerView.ViewHolder {
 
+        @BindView(R.id.datarow)
+        ConstraintLayout datarow;
+
         @BindView(R.id.homeTeam)
-        TextView home;
+        TextView homeView;
         @BindView(R.id.awayTeam)
-        TextView away;
+        TextView awayView;
         @BindView(R.id.date)
-        TextView date;
+        TextView dateView;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -37,15 +43,16 @@ public class SportEventAdapter extends RecyclerView.Adapter<SportEventAdapter.Vi
         }
 
         public void bind(SportEvent sportEvent) {
-            home.setText(sportEvent.getHomeTeam() + " VS");
-            away.setText(sportEvent.getAwayTeam());
-            date.setText(sportEvent.getDate());
 
-            home.setOnClickListener(v -> {
+            homeView.setText(sportEvent.getHomeTeam() + " VS");
+            awayView.setText(sportEvent.getAwayTeam());
+            dateView.setText(sportEvent.getDate());
+
+            homeView.setOnClickListener(v -> {
                 openTeamActivity(sportEvent.getIdHomeTeam());
             });
 
-            away.setOnClickListener(v -> {
+            awayView.setOnClickListener(v -> {
                 openTeamActivity(sportEvent.getIdAwayTeam());
             });
         }
@@ -65,7 +72,7 @@ public class SportEventAdapter extends RecyclerView.Adapter<SportEventAdapter.Vi
     List<SportEvent> sportEventList;
 
 
-    public SportEventAdapter(Context context, List<SportEvent> sportEventList) {
+    public SportEventsAdapter(Context context, List<SportEvent> sportEventList) {
         this.context = context;
         this.sportEventList = sportEventList;
 
@@ -83,6 +90,18 @@ public class SportEventAdapter extends RecyclerView.Adapter<SportEventAdapter.Vi
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         SportEvent sportEvent = sportEventList.get(position);
         holder.bind(sportEvent);
+
+        holder.datarow.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent intent = new Intent(context, SportEventDetailsActivity.class);
+                intent.putExtra("event", sportEvent);
+                context.startActivity(intent);
+
+            }
+        });
+
     }
 
     @Override
