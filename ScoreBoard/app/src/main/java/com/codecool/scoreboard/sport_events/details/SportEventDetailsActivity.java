@@ -22,8 +22,6 @@ public class SportEventDetailsActivity extends AppCompatActivity {
     TextView homeTeamView;
     @BindView(R.id.awayTeam)
     TextView awayTeamView;
-    @BindView(R.id.id)
-    TextView idView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
