@@ -41,14 +41,11 @@ public class NextEventsFragment extends Fragment implements SportEventsContract 
         presenter = new SportNextEventsPresenter(requireActivity());
         presenter.onAttach(this);
 
+        presenter.requestNextEvents(this);
+
         return view;
     }
 
-    @Override
-    public void onResume() {
-        super.onResume();
-        presenter.requestNextEvents(this);
-    }
 
     private void setAdapter() {
         adapter = new SportEventsAdapter(requireContext(), nextSportsEvents);
