@@ -29,17 +29,11 @@
         app:layout_constraintTop_toBottomOf="@id/description"
         app:srcCompat="@drawable/logo" />
 
-     <TextView
-         android:id="@+id/id"
-         app:layout_constraintTop_toBottomOf="@id/imageView"
-         app:layout_constraintEnd_toEndOf="parent"
-         app:layout_constraintStart_toStartOf="parent"
-         android:hint="@string/id"
-         style="@style/details" />
+
 
     <TextView
         android:id="@+id/date"
-        app:layout_constraintTop_toBottomOf="@id/id"
+        app:layout_constraintTop_toBottomOf="@id/imageView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         android:hint="@string/date"
