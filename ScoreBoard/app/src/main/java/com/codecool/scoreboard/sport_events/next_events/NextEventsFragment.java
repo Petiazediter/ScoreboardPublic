@@ -45,7 +45,7 @@ public class NextEventsFragment extends Fragment implements SportEventsContract 
 
         return view;
     }
-    
+
 
     private void setAdapter() {
         adapter = new SportEventsAdapter(requireContext(), nextSportsEvents);

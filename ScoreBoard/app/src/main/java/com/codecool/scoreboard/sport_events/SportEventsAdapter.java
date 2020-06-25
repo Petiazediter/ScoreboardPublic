@@ -2,7 +2,6 @@ package com.codecool.scoreboard.sport_events;
 
 import android.content.Context;
 import android.content.Intent;
-import android.content.Intent;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -15,8 +14,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.codecool.scoreboard.R;
 import com.codecool.scoreboard.model.SportEvent;
-import com.codecool.scoreboard.team_details.TeamDetailsActivity;
 import com.codecool.scoreboard.sport_events.details.SportEventDetailsActivity;
+import com.codecool.scoreboard.team_details.TeamDetailsActivity;
 
 import java.util.List;
 
@@ -44,7 +43,7 @@ public class SportEventsAdapter extends RecyclerView.Adapter<SportEventsAdapter.
 
         public void bind(SportEvent sportEvent) {
 
-            homeView.setText(sportEvent.getHomeTeam() + " VS");
+            homeView.setText(sportEvent.getHomeTeam());
             awayView.setText(sportEvent.getAwayTeam());
             dateView.setText(sportEvent.getDate());
 
