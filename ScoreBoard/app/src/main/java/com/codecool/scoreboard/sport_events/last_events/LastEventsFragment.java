@@ -50,8 +50,14 @@ public class LastEventsFragment extends Fragment implements SportEventsContract 
 
         presenter = new SportLastEventsPresenter(requireActivity());
         presenter.onAttach(this);
-        presenter.requestLastEvents(this);
+
         return view;
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        presenter.requestLastEvents(this);
     }
 
     private void progressBarOn() {
